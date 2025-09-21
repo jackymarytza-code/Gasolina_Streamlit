@@ -54,3 +54,8 @@ df_input = df_input.reindex(columns=columnas, fill_value=0)
 if st.button("Predecir Precio"):
     prediccion = modelo.predict(df_input)[0]
     st.success(f"💰 El precio estimado de la gasolina es: **${prediccion:.2f} pesos/litro**")
+
+# Enlace a la aplicación desplegada en Streamlit:
+# https://gasolina-app.streamlit.app/
+
+
