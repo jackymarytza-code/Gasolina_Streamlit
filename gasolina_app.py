@@ -1,3 +1,4 @@
+%%writefile gasolina_app.py
 import numpy as np
 import streamlit as st
 import pandas as pd
@@ -13,8 +14,9 @@ columnas = joblib.load("columnas_modelo.pkl")
 # Título y descripción
 # ================================
 st.title("⛽ Predicción del Precio de la Gasolina en México")
+st.image("gasolina.jpg", caption= " 📈 En México, el precio de la gasolina ha mostrado incrementos graduales a lo largo de los años, con variaciones estacionales según la entidad y el mes.")
 st.markdown("""
-Esta aplicación permite predecir el **precio regular de la gasolina** 
+Esta aplicación permite predecir el **precio regular de la gasolina**
 según la **entidad**, el **año** y el **mes** seleccionado.
 """)
 
@@ -22,11 +24,11 @@ según la **entidad**, el **año** y el **mes** seleccionado.
 # Entradas del usuario
 # ================================
 entidades = [
-    "Ciudad de Mexico", "Aguascalientes", "Baja California", "Baja California Sur",
-    "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Guanajuato",
-    "Guerrero", "Hidalgo", "Jalisco", "Mexico", "Michoacan", "Morelos", "Nayarit",
-    "Nuevo Leon", "Oaxaca", "Puebla", "Queretaro", "Quintana Roo", "San Luis Potosi",
-    "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"
+    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas",
+    "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "Guanajuato",
+    "Guerrero", "Hidalgo", "Jalisco", "México", "Michoacan", "Morelos", "Nayarit",
+    "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí",
+    "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
 ]
 
 entidad = st.selectbox("Selecciona la entidad:", entidades)
