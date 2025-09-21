@@ -30,9 +30,17 @@ entidades = [
     "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
 ]
 
+meses = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+]
+
 entidad = st.selectbox("Selecciona la entidad:", entidades)
 anio = st.number_input("Año:", min_value=2017, max_value=2025, value=2023, step=1)
-mes = st.slider("Mes:", min_value=1, max_value=12, value=1)
+mes_nombre = st.selectbox("Mes:", meses)
+
+# Convertir nombre de mes a número
+mes = meses.index(mes_nombre) + 1
 
 # ================================
 # Procesar entrada del usuario
